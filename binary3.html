@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Binary page</title>
+	<link rel="stylesheet" href="binary.css">
+	<link rel="stylesheet" href="fontawesome.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body background="img1.jpg">
+<p style="text-align: center;">
+<img src="coi.gif" width="300" height="200">
+</p>
+<p class="sad">Please click on play to flip a coin.<br>If you get head you will be promoted to next level.<br>if you  get tail, you will get another chance.</p>
+<div class="laand">
+<script type="text/javascript">
+function my1Function(){
+var ran=Math.floor(Math.random() * 100)+1;
+if(ran<=50){
+	swal({
+  title: "Oops!",
+  text: "flip it again",
+  icon: "error",
+});	
+}
+else{
+	swal({
+  title: "yeah!",
+  text: "You can go to next level!",
+  icon: "success",
+});
+ setTimeout(myfuction,1000);
+    function myfuction(){
+  		location.replace("game3.html")
+    }
+}
+
+}
+</script>
+<p style="text-align: center;">
+<button onclick="my1Function()" class="gandu">play</button>
+</p>
+</div>
+</body>
+</html>

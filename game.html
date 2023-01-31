@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="binary.css">
+</head>
+<body>
+    <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <div id="hud">
+                <div class="hud-item">
+                    <p id="progressText" class="hud-prefix">
+                        Level
+                    </p>
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
+                    </div>
+                </div>
+		<div class="hud-item">
+                    <p class="hud-prefix">
+                        Moves
+                    </p>
+                    <h1 class="hud-main-text" id="moves" style="font-size: 3.7rem;">
+                        1
+                    </h1>
+                </div>
+                <div class="hud-item">
+                    <p class="hud-prefix">
+                        Score
+                    </p>
+                    <h1 class="hud-main-text" id="score" style="font-size: 3.7rem;">
+                        0
+                    </h1>
+                </div>
+		<div class="hud-item">
+                    <p class="hud-prefix">
+                        Life
+                    </p>
+                    <h1 class="hud-main-text" id="life" style="font-size: 3.7rem;">
+                        3
+                    </h1>
+                </div>
+            </div>
+            <h1 id="question" style="font-size: 3rem;">What is the answer to this question</h1>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">Choice</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="2">Choice 2</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">C</p>
+                <p class="choice-text" data-number="3">Choice 3</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">D</p>
+                <p class="choice-text" data-number="4">Choice 4</p>
+            </div>
+        </div>
+    </div>
+
+<section class = "modal" id = "myModal">
+<div class = "modal-content">
+<span class="close">&times;</span>
+	<p style="text-align: center;">
+<img src="coi.gif" width="300" height="200">
+</p>
+<p class="sad">Please click on play to flip a coin.<br>If you get head you will be promoted to next level.<br>if you  get tail, you will get another chance.</p>
+<div class="laand">
+<script type="text/javascript">
+var modal = document.getElementById("myModal");
+function my1Function(){
+var ran=Math.floor(Math.random() * 100)+1;
+if(ran<=50){
+	swal({
+  title: "Oops!",
+  text: "flip it again",
+  icon: "error",
+});
+  	
+}
+else{
+	swal({
+  title: "yeah!",
+  text: "You can go to next level!",
+  icon: "success",
+  });
+   modal.style.display = "none";	
+}
+
+}
+</script>
+<p style="text-align: center;">
+<button onclick="my1Function()" class="gandu" style="width : 200px;">play</button>
+</p>
+</div>
+</div>
+</section>
+
+
+ 
+ <script src="game.js"></script>  
+</body>
+</html>
